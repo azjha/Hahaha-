@@ -2,34 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Koleksi Karakter</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Koleksi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #faf3e0;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .mythic-shadow {
+      width: 150px;
+      filter: brightness(0);
+    }
+    #collection-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px;
+    }
+    #collection-list div {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+    }
+  </style>
 </head>
-<body class="bright">
+<body>
   <audio autoplay loop>
     <source src="assets/bg-music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
-
-  <div class="collection-page">
-    <h1>Gacha</h1>
-    <img src="assets/silhouette.png" alt="Mythic Silhouette" class="mythic-shadow" />
-    <h2>Koleksi Kamu</h2>
-    <div id="collection-list"></div>
-    <button onclick="window.location.href='index.html'">⬅ Kembali</button>
-  </div>
+  <h1>Koleksi Kamu</h1>
+  <img class="mythic-shadow" src="assets/silhouette.png" />
+  <div id="collection-list"></div>
+  <button onclick="window.location.href='index.html'">⬅ Kembali</button>
 
   <script>
-    const collectionList = document.getElementById("collection-list");
-    const allCharacters = ["Sylphina", "Pyroclast", "Voltress", "Chronor", "Aetheron"];
-    const collection = JSON.parse(localStorage.getItem("collection") || "[]");
-
-    allCharacters.forEach(name => {
-      const div = document.createElement("div");
-      div.textContent = name;
-      div.style.opacity = collection.includes(name) ? "1" : "0.3";
-      collectionList.appendChild(div);
+    const allChars = ["Sylphina", "Pyroclast", "Voltress", "Chronor", "Aetheron"];
+    const got = JSON.parse(localStorage.getItem("collection") || "[]");
+    const div = document.getElementById("collection-list");
+    allChars.forEach(name => {
+      const el = document.createElement("div");
+      el.textContent = name;
+      el.style.opacity = got.includes(name) ? "1" : "0.3";
+      div.appendChild(el);
     });
   </script>
 </body>
