@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gacha Superhero - BETA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="main-page" class="page">
+    <div class="top-bar">
+      <button id="collection-btn" title="Lihat Koleksi">📦</button>
+      <span class="beta-tag">BETA</span>
+    </div>
+    <div class="character-display">
+      <img src="assets/silhouette.png" alt="Mythic Character" id="mythic-shadow" />
+    </div>
+    <button id="gacha-btn">GACHA!</button>
+    <div class="footer">
+      <span>Pencipta: Azhar</span>
+    </div>
+    <div id="gacha-animation" class="hidden"></div>
+  </div>
+
+  <div id="result-page" class="page hidden">
+    <div id="result-animation">
+      <img id="result-character" src="" alt="Karakter Didapat" />
+      <h2 id="character-name"></h2>
+      <div id="rarity-stars"></div>
+    </div>
+    <button id="back-btn">Kembali</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

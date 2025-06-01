@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koleksi Karakter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bright">
+  <audio autoplay loop>
+    <source src="assets/bg-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="collection-page">
+    <h1>Gacha</h1>
+    <img src="assets/silhouette.png" alt="Mythic Silhouette" class="mythic-shadow" />
+    <h2>Koleksi Kamu</h2>
+    <div id="collection-list"></div>
+    <button onclick="window.location.href='index.html'">⬅ Kembali</button>
+  </div>
+
+  <script>
+    const collectionList = document.getElementById("collection-list");
+    const allCharacters = ["Sylphina", "Pyroclast", "Voltress", "Chronor", "Aetheron"];
+    const collection = JSON.parse(localStorage.getItem("collection") || "[]");
+
+    allCharacters.forEach(name => {
+      const div = document.createElement("div");
+      div.textContent = name;
+      div.style.opacity = collection.includes(name) ? "1" : "0.3";
+      collectionList.appendChild(div);
+    });
+  </script>
+</body>
+</html>

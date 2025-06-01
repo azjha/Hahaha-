@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  overflow: hidden;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.top-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+#collection-btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+.beta-tag {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+.character-display img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: brightness(0);
+}
+#gacha-btn {
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+#result-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#result-character {
+  width: 200px;
+  animation: fadeInZoom 1s ease-in-out;
+}
+#rarity-stars {
+  margin-top: 10px;
+  font-size: 24px;
+}
+.hidden {
+  display: none;
+}
+@keyframes fadeInZoom {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+#gacha-animation {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  animation: flash 0.5s;
+  z-index: 10;
+}
+@keyframes flash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+body.bright {
+  background: #f4f4f4;
+  color: #222;
+}
+.collection-page {
+  text-align: center;
+  padding: 20px;
+}
+.collection-page h1 {
+  font-size: 36px;
+}
+.collection-page h2 {
+  margin-top: 20px;
+}
+#collection-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+#collection-list div {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.mythic-shadow {
+  width: 150px;
+  filter: brightness(0);
+}
